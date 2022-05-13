@@ -1,0 +1,164 @@
+// <SELECT>
+// Снипет (HTML): sel
+.select {
+	position: relative;
+
+	// .select__body
+	&__body {
+		position: relative;
+	}
+	// .select__title
+	&__title {
+		color: inherit;
+		text-align: left;
+		border: rem(2) solid #c4c4c4;
+		background-color: #fff;
+		cursor: pointer;
+		width: 100%;
+		border-radius: 4px;
+		font-family: $fontSecond;
+		font-weight: 600;
+		font-size: rem(15);
+		line-height: math.div(22, 15);
+		letter-spacing: em(4, 15);
+		transition: $transition ease border-color 0s;
+
+		._select-open & {
+			border-color: $DCyan;
+		}
+	}
+
+	// .select__value
+	&__value {
+		display: flex;
+		align-items: center;
+		height: rem(30);
+		padding: 0 rem(10);
+		gap: rem(10);
+
+		> * {
+			flex: 1 1 auto;
+		}
+
+		&:after {
+			content: "";
+			display: block;
+			width: rem(10);
+			height: rem(6);
+			flex: 0 0 rem(10);
+			background: url(../img/icomoon/select.svg) no-repeat center/contain;
+			transition: $transition ease transform 0s;
+
+			._select-open & {
+				transform: rotate(-180deg);
+			}
+		}
+		&._select-pseudo-label {
+			&::before {
+				content: attr(data-pseudo-label);
+				opacity: 0.5;
+			}
+		}
+	}
+
+	// .select__text
+	&__text {
+		flex: 1 1 auto;
+	}
+
+	// .select__input
+	&__input {
+		width: 100%;
+		background-color: transparent;
+		height: 100%;
+	}
+
+	// .select__options
+	&__options {
+		color: #000;
+		position: absolute;
+		top: 29px;
+		border-radius: 0 0 4px 4px;
+		min-width: 100%;
+		left: 0;
+		background-color: #fff;
+		border-top: 0;
+		border: rem(2) solid #c4c4c4;
+		border-top: 0;
+		padding: 10px 0px 5px 0px;
+		transition: $transition ease border-color 0s;
+
+		._select-open & {
+			border-color: $DCyan;
+		}
+	}
+
+	// .select__scroll
+	&__scroll {
+		overflow-y: auto;
+		overflow-x: hidden;
+		// Максимальная высота
+		max-height: 200px;
+		// Стили скроллбара
+		.simplebar-scrollbar {
+			&::before {
+				//opacity: 1;
+			}
+		}
+	}
+
+	// .select__option
+	&__option {
+		width: 100%;
+		text-align: left;
+		cursor: pointer;
+		padding: 5px 10px;
+		font-family: $fontSecond;
+		font-weight: 600;
+		font-size: rem(15);
+		line-height: math.div(22, 15);
+		letter-spacing: em(4, 15);
+		color: inherit;
+		transition: $transition ease background-color 0s;
+
+		&._select-selected {
+			background-color: #eee;
+		}
+
+		@media (any-hover: hover) {
+			&:hover {
+				background-color: #c4c4c4;
+			}
+		}
+	}
+
+	// Конструкция дополнительных данных
+	&__row {
+		display: inline-flex;
+		align-items: center;
+	}
+	&__asset {
+	}
+	&__text {
+	}
+
+	// Состояния селекта
+	&._select-open {
+		z-index: 5;
+	}
+	&._select-disabled {
+	}
+	&._select-active {
+	}
+	&._select-focus {
+	}
+	&._select-multiple {
+	}
+	&._select-checkbox {
+	}
+}
+
+// Тег
+._select-tag {
+	cursor: pointer;
+}

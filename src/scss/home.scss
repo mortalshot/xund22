@@ -1,0 +1,443 @@
+// page ====================================================================================================
+.page {
+    &._fixed {
+        position: fixed;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        overflow: hidden;
+    }
+}
+
+// home ====================================================================================================
+.home {
+    // .home__slider
+    &__slider {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        height: 100%;
+    }
+
+    // .home__wrapper
+    &__wrapper {
+    }
+
+    // .home__slide
+    &__slide {
+        flex: 1 0 100%;
+        width: 100%;
+        position: relative;
+        display: flex;
+        align-items: center;
+
+        [class*="__container"] {
+            width: 100%;
+        }
+    }
+
+    // .home__content
+    &__content {
+        position: relative;
+        z-index: 1;
+        padding-top: rem(78);
+        padding-bottom: rem(32);
+
+        @media (min-height: em(800)) {
+            @include adaptiveValue("padding-top", 98, 78);
+            @include adaptiveValue("padding-bottom", 98, 78);
+        }
+    }
+
+    // .home__bg
+    &__bg {
+        img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    }
+
+    // .home__scroll
+    &__scroll {
+        @media (min-width: $mobile) {
+            position: absolute;
+            z-index: 1;
+            top: 0;
+            right: 0;
+            width: rem(8);
+            height: 100%;
+            background-color: rgba($color: $Black, $alpha: 0.5);
+        }
+    }
+
+    // .home__drag-scroll
+    &__drag-scroll {
+        @media (min-width: $mobile) {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background-color: rgba($color: $Black, $alpha: 0.8);
+            cursor: pointer;
+        }
+    }
+}
+
+// template1 ====================================================================================================
+.template1 {
+    // .template1__row
+    &__row {
+        display: grid;
+        align-items: center;
+        justify-content: space-between;
+        column-gap: rem(40);
+        min-width: rem(0);
+
+        @media (min-width: $tablet) and (min-height: em(800)) {
+            grid-template-columns: percent(520, 1292) 1fr;
+        }
+        @media (min-width: $tablet) and (max-height: em(800)) {
+            grid-template-columns: 53% 1fr;
+        }
+    }
+
+    // .template1__body
+    &__body {
+        max-width: rem(477);
+
+        @media (max-width: $tablet) {
+            padding: rem(0) 0 rem(50);
+        }
+    }
+
+    // .template1__text
+    &__text {
+        h1,
+        h2 {
+            font-family: $fontSecond;
+            font-weight: 700;
+            @include adaptiveValue("font-size", 56, 30);
+            line-height: math.div(104, 80);
+            color: $Black;
+
+            @media (min-height: em(800)) {
+                @include adaptiveValue("font-size", 72, 30);
+            }
+        }
+
+        p {
+            @media (min-height: em(800)) {
+                @include adaptiveValue("font-size", 25, 16);
+            }
+        }
+    }
+
+    // .template1__actions
+    &__actions {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, rem(200));
+        @include adaptiveValue("gap", 16, 8);
+
+        @media (max-width: $mobileM) {
+            grid-template-columns: 1fr 1fr;
+        }
+
+        &:not(:first-child) {
+            margin-top: rem(32);
+        }
+    }
+
+    // .template1__slider
+    &__slider {
+        @media (max-width: $tablet) {
+            margin-left: rem(-20);
+            margin-right: rem(-20);
+            padding: 0 rem(20);
+        }
+    }
+
+    // .template1__wrapper
+    &__wrapper {
+        @media (min-width: $tablet) {
+            display: grid !important;
+            grid-template-columns: repeat(2, 1fr);
+            gap: rem(10);
+        }
+        @media (max-width: $tablet) {
+            flex-direction: row !important;
+        }
+    }
+
+    // .template1__slide
+    &__slide {
+        border: rem(11) solid rgba($color: $White, $alpha: 0.3);
+        @include adaptiveValue("border-width", 11, 6);
+        position: relative;
+        padding-bottom: percent(280, 380);
+        overflow: hidden;
+
+        @media (min-height: em(800)) {
+            padding-bottom: percent(330, 380);
+        }
+        @media (max-width: $tablet) {
+            @include adaptiveValue("padding-bottom", 280, 200, 768, 320, 1);
+        }
+
+        img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        a {
+            @media (any-hover: hover) {
+                img {
+                    transform: scale(1) translateY(0);
+                    transform-origin: 50% 16%;
+                    transition: 5s ease all 0s;
+                }
+
+                &:hover {
+                    img {
+                        transform: scale(1.25) translateY(-15px);
+                        transform-origin: top;
+                        opacity: 0.6;
+                    }
+                }
+            }
+        }
+    }
+}
+
+// template2 ====================================================================================================
+.template2 {
+    @media (max-width: $tablet) {
+        align-items: flex-start;
+    }
+
+    // .template2__text
+    &__text {
+        max-width: rem(600);
+
+        h2 {
+            text-transform: uppercase;
+        }
+    }
+
+    .template1__actions {
+        @media (max-width: $mobileSmall) {
+            grid-template-columns: 1fr;
+            max-width: rem(180);
+        }
+    }
+
+    .home__content {
+        // padding-top: rem(100);
+    }
+
+    .home__bg {
+        img {
+            @media (min-width: $tablet) {
+                object-position: top;
+            }
+        }
+    }
+}
+
+// template3 ====================================================================================================
+.template3 {
+    align-items: flex-end;
+
+    .home__container {
+        padding: 0 rem(20);
+        max-width: rem(1478);
+
+        @media (max-width: $tablet) {
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            padding: 0;
+        }
+    }
+
+    .home__content {
+        padding: 0;
+
+        @media (max-width: $tablet) {
+            order: 1;
+        }
+    }
+
+    // .template3__body
+    &__body {
+        background-color: rgba($color: $White, $alpha: 0.95);
+        @include adaptiveValue("padding-top", 60, 20);
+        @include adaptiveValue("padding-bottom", 60, 32);
+        @include adaptiveValue("padding-left", 40, 20, 1520, 992, 1);
+        @include adaptiveValue("padding-right", 40, 20, 1520, 992, 1);
+
+        @media (min-width: $tablet) {
+            max-width: rem(691);
+        }
+    }
+
+    // .template3__text
+    &__text {
+        &:not(:last-child) {
+            @include adaptiveValue("margin-bottom", 32, 24);
+        }
+    }
+
+    // .template3__slider
+    &__slider {
+        @media (max-width: $mobileM) {
+            margin-left: rem(-20);
+            margin-right: rem(-20);
+            padding-left: rem(20);
+            padding-right: rem(20);
+        }
+    }
+
+    // .template3__wrapper
+    &__wrapper {
+        flex-direction: row !important;
+    }
+
+    // .template3__slide
+    &__slide {
+    }
+
+    .home__bg {
+        @media (max-width: $tablet) {
+            position: relative;
+            // padding-bottom: percent(668, 1086);
+            order: 0;
+            flex: 1;
+        }
+
+        img {
+            object-position: top right;
+        }
+    }
+}
+
+.template3-review {
+    display: grid;
+    row-gap: rem(5);
+
+    // .template3-review__rating
+    &__rating {
+    }
+
+    // .template3-review__name
+    &__name {
+        font-family: $fontSecond;
+        font-weight: 800;
+        font-size: rem(16);
+        line-height: math.div(21, 16);
+        color: $Black;
+    }
+
+    // .template3-review__text
+    &__text {
+        display: -webkit-box;
+        -webkit-line-clamp: 2;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+        font-size: rem(14);
+        line-height: math.div(18, 12);
+    }
+}
+
+// contacts ====================================================================================================
+.contacts {
+    background-color: $White;
+
+    .home__content {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        padding-bottom: 0;
+    }
+
+    // .contacts__form
+    &__form {
+        position: relative;
+        flex: 1;
+        display: flex;
+        align-items: center;
+
+        &::before,
+        &::after {
+            content: "";
+            position: absolute;
+            display: block;
+            pointer-events: none;
+        }
+        &::before {
+            width: rem(227);
+            height: rem(672);
+            background: url(../img/home/blobs1.svg) no-repeat center/contain;
+            left: 0;
+        }
+        &::after {
+            background: url(../img/home/blobs2.svg) no-repeat center/contain;
+            right: 0;
+            width: rem(227);
+            height: rem(739);
+        }
+
+        .contacts__container {
+            max-width: rem(1075);
+        }
+    }
+
+    // .contacts__container
+    &__container {
+    }
+
+    // .contacts__row
+    &__row {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        column-gap: rem(120);
+    }
+
+    // .contacts__left
+    &__left {
+    }
+
+    // .contacts__text
+    &__text {
+        @include adaptiveValue("font-size", 18, 16);
+
+        &:not(:last-child) {
+            margin-bottom: rem(32);
+        }
+
+        h1,
+        h2,
+        h3,
+        h4 {
+            &:not(:last-child) {
+                margin-bottom: rem(8);
+            }
+        }
+        p {
+            margin: rem(8) 0;
+        }
+    }
+
+    // .contacts__right
+    &__right {
+    }
+}

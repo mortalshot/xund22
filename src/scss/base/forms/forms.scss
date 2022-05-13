@@ -1,0 +1,357 @@
+//<FORM>
+// Снипет (HTML):
+.form {
+	// .form__row
+	&__row {
+		display: flex;
+		flex-wrap: wrap;
+		margin-left: rem(-10);
+		margin-right: rem(-10);
+	}
+
+	// .form__item
+	&__item {
+		width: 100%;
+		margin-bottom: rem(32);
+		border: rem(2) solid transparent;
+
+		// .form__item_row
+		&_row {
+			display: flex;
+			align-items: center;
+
+			.form__label {
+				margin-bottom: 0;
+				margin-right: rem(24);
+			}
+		}
+	}
+
+	// .form__label
+	&__label {
+		display: inline-block;
+		margin-bottom: rem(8);
+		font-family: $fontSecond;
+		font-weight: 600;
+	}
+
+	label.form__label {
+		cursor: pointer;
+	}
+}
+
+.form {
+	// .form__row
+	&__row {
+	}
+	// .form__item
+	&__item {
+		// .form__item_row
+		&_row {
+		}
+	}
+	// .form__label
+	&__label {
+	}
+	// .form__input
+	&__input {
+		// .form__input_contact
+		&_contact {
+		}
+	}
+	// .form__item-wrapper
+	&__item-wrapper {
+	}
+	// .form__item-controls
+	&__item-controls {
+	}
+	// .form__privacy
+	&__privacy {
+	}
+	// .form__submit
+	&__submit {
+	}
+}
+//</FORM>
+
+.col {
+	&-5,
+	&-6,
+	&-7,
+	&-8,
+	&-12,
+	&-sm-3,
+	&-sm-5,
+	&-sm-6,
+	&-sm-7,
+	&-sm-9,
+	&-sm-12,
+	&-md-3,
+	&-md-4,
+	&-md-5,
+	&-md-6,
+	&-md-7,
+	&-md-8,
+	&-md-9,
+	&-md-10,
+	&-md-12,
+	&-lg-3,
+	&-lg-6,
+	&-lg-9,
+	&-lg-12,
+	&-xl-3 {
+		width: 100%;
+		min-height: 1px;
+		padding-left: rem(10);
+		padding-right: rem(10);
+
+		& > [class^="col-"] {
+			padding-left: 0;
+			padding-right: 0;
+		}
+	}
+
+	&-5 {
+		flex: 0 0 41.666%;
+		max-width: 41.666%;
+	}
+
+	&-6 {
+		flex: 0 0 50%;
+		max-width: 50%;
+	}
+
+	&-7 {
+		flex: 0 0 58.333%;
+		max-width: 58.333%;
+	}
+
+	&-8 {
+		flex: 0 0 66.666%;
+		max-width: 66.666%;
+	}
+
+	&-12 {
+		flex: 0 0 100%;
+		max-width: 100%;
+	}
+
+	&-sm-3 {
+		@media screen and (min-width: 574.98px) {
+			flex: 0 0 25%;
+			max-width: 25%;
+		}
+	}
+
+	&-sm-5 {
+		@media screen and (min-width: 574.98px) {
+			flex: 0 0 41.666%;
+			max-width: 41.666%;
+		}
+	}
+
+	&-sm-6 {
+		@media screen and (min-width: 574.98px) {
+			flex: 0 0 50%;
+			max-width: 50%;
+		}
+	}
+
+	&-sm-7 {
+		@media screen and (min-width: 574.98px) {
+			flex: 0 0 58.333%;
+			max-width: 58.333%;
+		}
+	}
+
+	&-sm-9 {
+		@media screen and (min-width: 574.98px) {
+			flex: 0 0 75%;
+			max-width: 75%;
+		}
+	}
+
+	&-sm-12 {
+		@media screen and (min-width: 574.98px) {
+			flex: 0 0 100%;
+			max-width: 100%;
+		}
+	}
+
+	&-md-3 {
+		@media screen and (min-width: $mobile) {
+			flex: 0 0 25%;
+			max-width: 25%;
+		}
+	}
+
+	&-md-4 {
+		@media screen and (min-width: $mobile) {
+			flex: 0 0 33.333%;
+			max-width: 33.333%;
+		}
+	}
+
+	&-md-5 {
+		@media screen and (min-width: $mobile) {
+			flex: 0 0 41.666%;
+			max-width: 41.666%;
+		}
+	}
+
+	&-md-6 {
+		@media screen and (min-width: $mobile) {
+			flex: 0 0 50%;
+			max-width: 50%;
+		}
+	}
+
+	&-md-7 {
+		@media screen and (min-width: $mobile) {
+			flex: 0 0 58.333%;
+			max-width: 58.333%;
+		}
+	}
+
+	&-md-8 {
+		@media screen and (min-width: $mobile) {
+			flex: 0 0 66.666%;
+			max-width: 66.666%;
+		}
+	}
+
+	&-md-9 {
+		@media screen and (min-width: $mobile) {
+			flex: 0 0 75%;
+			max-width: 75%;
+		}
+	}
+
+	&-md-10 {
+		@media screen and (min-width: $mobile) {
+			flex: 0 0 83.333%;
+			max-width: 83.333%;
+		}
+	}
+
+	&-md-12 {
+		@media screen and (min-width: $mobile) {
+			flex: 0 0 100%;
+			max-width: 100%;
+		}
+	}
+
+	&-lg-3 {
+		@media screen and (min-width: $tablet) {
+			flex: 0 0 25%;
+			max-width: 25%;
+		}
+	}
+
+	&-lg-4 {
+		@media screen and (min-width: $tablet) {
+			flex: 0 0 33.333%;
+			max-width: 33.333%;
+		}
+	}
+
+	&-lg-6 {
+		@media screen and (min-width: $tablet) {
+			flex: 0 0 50%;
+			max-width: 50%;
+		}
+	}
+
+	&-lg-8 {
+		@media screen and (min-width: $tablet) {
+			flex: 0 0 66.666%;
+			max-width: 66.666%;
+		}
+	}
+
+	&-lg-9 {
+		@media screen and (min-width: $tablet) {
+			flex: 0 0 75%;
+			max-width: 75%;
+		}
+	}
+
+	&-lg-12 {
+		@media screen and (min-width: $tablet) {
+			flex: 0 0 100%;
+			max-width: 100%;
+		}
+	}
+
+	&-xl-3 {
+		@media screen and (min-width: 1199.98px) {
+			flex: 0 0 25%;
+			max-width: 25%;
+		}
+	}
+
+	&-xl-9 {
+		@media screen and (min-width: 1199.98px) {
+			flex: 0 0 75%;
+			max-width: 75%;
+		}
+	}
+}
+
+/* // contact-form7
+.wpcf7-spinner {
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	width: 100%;
+	height: 100%;
+	margin: 0;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	border-radius: rem(30);
+	background-color: initial;
+
+	&::before {
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+		width: rem(32);
+		height: rem(32);
+		background-color: $Blue;
+	}
+}
+ */
+// <BUTTONS>
+// Снипет (HTML): btn
+@import "button";
+
+// <INPUTS>
+// Снипет (HTML): inp
+@import "input";
+
+// <CHECK>
+// Снипет (HTML): chk
+// @import "checkbox";
+
+// <RADIO>
+// Снипет (HTML): opt
+@import "radio";
+
+// <SELECT>
+// Снипет (HTML): sel
+@import "select";
+
+// <RATING>
+// Снипет (HTML): rating
+@import "rating";
+
+// <QUANTITY>
+// Снипет (HTML): qa
+// @import "quantity";
+
+// <RANGE>
+// Снипет (HTML):
+// @import "range";

@@ -1,0 +1,101 @@
+// Заголовки, общие БЄМ блоки и проче...
+h {
+    &1 {
+        font-family: $fontSecond;
+        font-weight: 700;
+        @include adaptiveValue("font-size", 56, 30);
+        line-height: math.div(104, 80);
+        color: $Black;
+    }
+    &2 {
+        font-family: $fontSecond;
+        font-weight: 700;
+        @include adaptiveValue("font-size", 50, 24);
+        line-height: math.div(65, 50);
+        letter-spacing: em(5, 50);
+        color: $Black;
+    }
+    &3 {
+        font-family: $fontSecond;
+        font-weight: 700;
+        @include adaptiveValue("font-size", 26, 18);
+        line-height: math.div(33, 26);
+        color: $Black;
+    }
+}
+
+img,
+video {
+    display: block;
+    max-width: 100%;
+    height: auto;
+}
+
+._content {
+    h1,
+    h2,
+    h3 {
+        &:not(:last-child) {
+            margin-bottom: rem(24);
+        }
+    }
+
+    p {
+        @include adaptiveValue("margin-top", 24, 16);
+        @include adaptiveValue("margin-bottom", 24, 16);
+    }
+
+    ol {
+        counter-reset: item;
+
+        li {
+            position: relative;
+            @include adaptiveValue("padding-left", 40, 24);
+            list-style-type: none;
+
+            &::before {
+                content: counter(item) ".";
+                counter-increment: item;
+                position: absolute;
+                left: 0;
+            }
+
+            & > ol {
+                counter-reset: subitem;
+
+                li {
+                    &::before {
+                        content: counter(item) "." counters(subitem, ".") " ";
+                        counter-increment: subitem;
+                    }
+                }
+            }
+        }
+    }
+
+    ul {
+        padding-left: rem(24);
+
+        li {
+            list-style-type: disc;
+        }
+    }
+
+    .table {
+        width: 100%;
+        overflow-x: auto;
+        scrollbar-width: thin;
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+    }
+
+    :first-child {
+        margin-top: 0;
+    }
+    :last-child {
+        margin-bottom: 0;
+    }
+}
