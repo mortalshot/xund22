@@ -46,6 +46,9 @@ function initSliders() {
 			speed: 800,
 			watchOverflow: true,
 
+			// Запрет на смену слайда через перетаскивание
+			// allowTouchMove: false,
+
 			// Ленивая загрузка
 			preloadImages: true,
 			lazy: {

@@ -6,7 +6,7 @@
 	<meta charset="UTF-8">
 	<meta name="format-detection" content="telephone=no">
 	<!-- <style>body{opacity: 0;}</style> -->
-	<link rel="stylesheet" href="css/style.min.css?_v=20220513142338">
+	<link rel="stylesheet" href="css/style.min.css?_v=20220516180010">
 	<link rel="shortcut icon" href="favicon.ico">
 	<!-- <meta name="robots" content="noindex, nofollow"> -->
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -257,9 +257,10 @@
 							</div>
 						</div>
 					</div>
-					<!-- <div class="home__slide swiper-slide contacts">
+
+					<div class="home__slide swiper-slide contacts">
 						<div class="home__content">
-							<form action="" class="contacts__form form">
+							<form action="" class="contacts__form form calculator">
 								<div class="contacts__container">
 									<div class="contacts__row">
 										<div class="contacts__left">
@@ -269,49 +270,79 @@
 											</div>
 
 											<div class="form__row">
-												<div class="form__item form__item_row col-12 col-md-6">
-													<div class="form__label">Geschlecht</div>
+												<div class="form__item form__item_row col-12">
+													<div class="form__label">Versicherte</div>
 
 													<div class="options options_gender">
-														<div class="options__item">
+														<div class="options__item gender_1">
 															<input hidden id="gender1" class="options__input" type="radio" value="female" name="gender">
 															<label for="gender1" class="options__label"><span class="options__text _icon-female"></span></label>
 														</div>
-														<div class="options__item">
+														<div class="options__item gender_3">
 															<input hidden id="gender2" class="options__input" type="radio" value="male" name="gender">
 															<label for="gender2" class="options__label"><span class="options__text _icon-male"></span></label>
 														</div>
+														<div class="options__item gender_3">
+															<input hidden id="gender3" class="options__input" type="radio" value="baby" name="gender">
+															<label for="gender3" class="options__label"><span class="options__text _icon-phone"></span></label>
+														</div>
 													</div>
 												</div>
-												<div class="form__item form__item_row col-12 col-md-6">
+												<div class="form__item form__item_row col-12 _disabled">
 													<div class="form__label">Geburtsjahr</div>
-													<select name="form[]" class="form">
-														<option>YYYY</option>
-														<option value="1990">1990</option>
-														<option value="1991">1991</option>
-														<option value="1992">1992</option>
-														<option value="1993">1993</option>
-														<option value="1994">1994</option>
+													<select name="form[]" data-scroll>
+														<option value="">YYYY</option>
+														<option value="2004">2004</option>
+														<option value="2003">2003</option>
+														<option value="2002">2002</option>
+														<option value="2001">2001</option>
+														<option value="2000">2000</option>
+														<option value="1999">1999</option>
+														<option value="1998">1998</option>
+														<option value="1997">1997</option>
+														<option value="1996">1996</option>
 														<option value="1995">1995</option>
+														<option value="1994">1994</option>
+														<option value="1993">1993</option>
+														<option value="1992">1992</option>
+														<option value="1991">1991</option>
+														<option value="1990">1990</option>
+														<option value="1989">1989</option>
+														<option value="1988">1988</option>
+														<option value="1987">1987</option>
+														<option value="1986">1986</option>
+														<option value="1985">1985</option>
+														<option value="1984">1984</option>
+														<option value="1983">1983</option>
+														<option value="1982">1982</option>
+														<option value="1981">1981</option>
+														<option value="1980">1980</option>
+														<option value="1979">1979</option>
+														<option value="1978">1978</option>
+														<option value="1977">1977</option>
+														<option value="1976">1976</option>
+														<option value="1975">1975</option>
+														<option value="1974">1974</option>
+														<option value="1973">1973</option>
 													</select>
 												</div>
 												<div class="form__item col-12">
-													<div class="options options_service">
-														<div class="options__item">
-															<input hidden id="service1" class="options__input" type="radio" value="Deine Sicherheit" name="service">
-															<label for="service1" class="options__label"><span class="options__text">Deine Sicherheit</span></label>
+													<div class="options-service">
+														<div class="checkbox service_1 _disabled">
+															<input hidden id="service1" class="checkbox__input" type="checkbox" value="Deine Sicherheit" name="service">
+															<label for="service1" class="checkbox__label"><span class="checkbox__text">Deine Sicherheit</span></label>
 														</div>
-														<div class="options__item">
-															<input hidden id="service2" class="options__input" type="radio" value="Deine Freude" name="service">
-															<label for="service2" class="options__label"><span class="options__text">Deine Freude</span></label>
+														<div class="checkbox service_2 _disabled">
+															<input hidden id="service2" class="checkbox__input" type="checkbox" value="Deine Freude" name="service">
+															<label for="service2" class="checkbox__label"><span class="checkbox__text">Deine Freude</span></label>
 														</div>
-														<div class="options__item">
-															<input hidden id="service3" class="options__input" type="radio" value="Dein Nutzen" name="service">
-															<label for="service3" class="options__label"><span class="options__text">Dein Nutzen</span></label>
+														<div class="checkbox service_3 _disabled">
+															<input hidden id="service3" class="checkbox__input" type="checkbox" value="Dein Nutzen" name="service">
+															<label for="service3" class="checkbox__label"><span class="checkbox__text">Dein Nutzen</span></label>
 														</div>
-														<div class="options__item">
-															<input hidden id="service4" class="options__input" type="radio" value="Dein Baby" name="service">
-															<label for="service4" class="options__label"><span class="options__text">Dein Baby</span></label>
+														<div class="checkbox service_4 _disabled">
+															<input hidden id="service4" class="checkbox__input" type="checkbox" value="Dein Baby" name="service">
+															<label for="service4" class="checkbox__label"><span class="checkbox__text">Dein Baby</span></label>
 														</div>
 													</div>
 												</div>
@@ -328,7 +359,7 @@
 													<input autocomplete="off" type="text" name="contactsName" placeholder="Dein Name" class="form__input">
 												</div>
 												<div class="form__item col-12">
-													<div class="form__item-wrapper">
+													<div class="form__item-wrapper _disabled">
 														<div class="form__item-controls options">
 															<div class="options__item">
 																<input hidden id="contactType1" class="options__input" type="radio" value="whatsapp" name="contactType">
@@ -344,7 +375,7 @@
 															</div>
 														</div>
 
-														<input id="contactsContact" autocomplete="off" type="text" name="contactsContact" placeholder="" class="form__input form__input_contact">
+														<input id="contactsContact" autocomplete="off" type="text" name="contactsContact" placeholder="Wählen Sie eine Option" class="form__input form__input_contact" disabled required>
 													</div>
 												</div>
 											</div>
@@ -352,11 +383,11 @@
 											<div class="form__privacy">
 												<label>
 													<input type="checkbox" value="1" name="privacy">
-													<span>Hiermit stimme ich der Aufbewahrung und Nutzung meiner Daten im Sinne der Datenschutzerklärung zu.</span>
+													<span class="wpcf7-list-item-label">Hiermit stimme ich der Aufbewahrung und Nutzung meiner Daten im Sinne der Datenschutzerklärung zu.</span>
 												</label>
 											</div>
 
-											<div class="form__submit">
+											<div class="form__submit _disabled">
 												<input type="submit" value="Absenden" class="btn btn_black">
 											</div>
 										</div>
@@ -364,9 +395,31 @@
 								</div>
 							</form>
 
-							<div class="footer" style="height: 206px; background: pink;">footer</div>
+							<!-- <div class="footer">
+								<div class="footer__container">
+									<div class="footer__row">
+										<div class="footer__left">
+											<div class="footer__logo logo">
+												<a href="home.html" class="logo__link"><img src="img/logo.svg" alt="" loading="lazy"></a>
+											</div>
+											<div class="footer__address">XUND Versicherungmakler KG <br> Walfischgasse 8/Top 17, 1010 Wien </div>
+										</div>
+										<div class="footer__contacts communications">
+											<a href="tel:+436508212748" class="communications__item">+43 650 82 12 748 </a>
+											<a href="mailto:bleib@xund.wien" class="communications__item">bleib@xund.wien </a>
+											<a href="https://www.xund.wien/" class="communications__item">www.xund.wien</a>
+										</div>
+										<nav class="footer__menu">
+											<ul>
+												<li><a href="">Impressum</a></li>
+												<li><a href="">Datenschutzerklärung</a></li>
+											</ul>
+										</nav>
+									</div>
+								</div>
+							</div> -->
 						</div>
-					</div> -->
+					</div>
 				</div>
 				<div class="home__scroll"></div>
 			</div>
@@ -386,7 +439,7 @@
 		</div>
 	</div>
 </div> -->
-	<script src="js/app.min.js?_v=20220513142338"></script>
+	<script src="js/app.min.js?_v=20220516180010"></script>
 </body>
 
 </html>

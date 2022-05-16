@@ -12,8 +12,9 @@
 	// .form__item
 	&__item {
 		width: 100%;
-		margin-bottom: rem(32);
+		@include adaptiveValue("margin-bottom", 32, 8);
 		border: rem(2) solid transparent;
+		transition: $transition ease opacity 0s;
 
 		// .form__item_row
 		&_row {
@@ -22,7 +23,8 @@
 
 			.form__label {
 				margin-bottom: 0;
-				margin-right: rem(24);
+				@include adaptiveValue("margin-right", 24, 8, 1520, 992, 1);
+				@include adaptiveValue("font-size", 20, 14);
 			}
 		}
 	}
@@ -38,38 +40,165 @@
 	label.form__label {
 		cursor: pointer;
 	}
-}
 
-.form {
-	// .form__row
-	&__row {
-	}
-	// .form__item
-	&__item {
-		// .form__item_row
-		&_row {
-		}
-	}
-	// .form__label
-	&__label {
-	}
 	// .form__input
 	&__input {
-		// .form__input_contact
-		&_contact {
-		}
 	}
+
 	// .form__item-wrapper
 	&__item-wrapper {
+		display: flex;
+		align-items: center;
+		padding-bottom: rem(10);
+		border-bottom: 1px solid #d3d3d3;
+		transition: $transition ease border-color 0s;
+
+		&._error {
+			border-color: red;
+		}
 	}
+
 	// .form__item-controls
 	&__item-controls {
+		flex-direction: row !important;
+		align-items: center !important;
+
+		.options {
+			// .options__item
+			&__item {
+				&:not(:last-child) {
+					margin-right: rem(5);
+					margin-bottom: 0;
+				}
+
+				span {
+					display: flex;
+					align-items: center;
+					justify-content: center;
+					@include adaptiveValue("font-size", 24, 19);
+					@include adaptiveValue("width", 47, 31);
+					@include adaptiveValue("height", 47, 31);
+					border-radius: 50%;
+					background-color: $White;
+					filter: drop-shadow(0px 0px 4.66385px rgba(0, 0, 0, 0.25));
+				}
+
+				._icon-phone {
+					@include adaptiveValue("font-size", 22, 16);
+				}
+			}
+
+			// .options__input
+			&__input {
+				&:checked + .options__label {
+					color: #60a134;
+				}
+			}
+
+			// .options__label
+			&__label {
+				transition: $transition ease color 0s;
+
+				&::before,
+				&::after {
+					display: none;
+				}
+			}
+		}
 	}
+
 	// .form__privacy
 	&__privacy {
+		&:not(:last-child) {
+			@include adaptiveValue("margin-bottom", 32, 16);
+		}
+
+		label {
+			cursor: pointer;
+		}
+
+		input {
+			position: absolute;
+			width: 0;
+			height: 0;
+			opacity: 0;
+
+			&:checked + span {
+				&::after {
+					opacity: 1;
+				}
+			}
+		}
+
+		.wpcf7-list-item-label {
+			display: flex;
+			align-items: flex-start;
+			position: relative;
+			padding-left: rem(27);
+			@include adaptiveValue("font-size", 14, 12);
+			line-height: math.div(21, 14);
+
+			&:before {
+				content: "";
+				align-self: flex-start;
+				flex: 0 0 rem(17);
+				width: rem(17);
+				height: rem(17);
+				border: 1px solid #d3d3d3;
+				position: absolute;
+				top: rem(7);
+				left: 0;
+			}
+			&::after {
+				content: "\e908";
+				@extend %ic;
+				font-size: rem(13);
+				color: #f2994a;
+				position: absolute;
+				left: rem(2);
+				top: rem(10);
+				opacity: 0;
+				transition: $transition ease opacity 0s;
+			}
+		}
 	}
+
 	// .form__submit
 	&__submit {
+		transition: $transition ease opacity 0s;
+
+		.btn {
+			font-family: $fontFamily;
+			font-weight: 400;
+			font-size: rem(18);
+			line-height: math.div(26, 18);
+		}
+	}
+
+	.options-service {
+		display: flex;
+		flex-direction: row;
+		flex-wrap: wrap;
+		margin: rem(-5);
+
+		.checkbox {
+			margin: 0;
+			padding: rem(5);
+			flex: 0 0 100%;
+
+			@media (min-width: $mobile) {
+				flex: 0 0 50%;
+			}
+		}
+
+		.options__label {
+		}
+	}
+
+	._disabled {
+		pointer-events: none;
+		opacity: 0.6;
+		transition: $transition ease opacity 0s;
 	}
 }
 //</FORM>
@@ -290,6 +419,13 @@
 		}
 	}
 
+	&-lg-6 {
+		@media screen and (min-width: 1199.98px) {
+			flex: 0 0 50%;
+			max-width: 50%;
+		}
+	}
+
 	&-xl-9 {
 		@media screen and (min-width: 1199.98px) {
 			flex: 0 0 75%;
@@ -334,7 +470,7 @@
 
 // <CHECK>
 // Снипет (HTML): chk
-// @import "checkbox";
+@import "checkbox";
 
 // <RADIO>
 // Снипет (HTML): opt

@@ -1,3 +1,108 @@
-//====================================================================================================
+// footer ====================================================================================================
+.footer {
+    background-color: #f3f3f3;
+    padding-top: rem(24);
+    padding-bottom: rem(24);
+
+    // .footer__container
+    &__container {
+        width: auto !important;
+    }
+
+    &__row {
+        max-width: rem(1420);
+        display: flex;
+        align-items: flex-start;
+        @include adaptiveValue("font-size", 16, 14);
+        line-height: math.div(25, 17);
+
+        @media (max-width: $mobileM) {
+            display: grid;
+            grid-template-areas:
+                "left contacts"
+                "left menu";
+            row-gap: rem(20);
+        }
+        @media (max-width: $mobileSmall) {
+            grid-template-areas:
+                "left"
+                "contacts"
+                "menu";
+        }
+
+        & > * {
+            &:not(:last-child) {
+                @include adaptiveValue("margin-right", 90, 20, 1520, 992, 1);
+            }
+        }
+
+        a {
+            display: inline-flex;
+
+            @media (any-hover: hover) {
+                transition: $transition ease color 0s;
+
+                &:hover {
+                    color: $Orange;
+                }
+            }
+        }
+    }
+
+    // .footer__left
+    &__left {
+        flex: 1;
+        display: grid;
+        align-items: flex-start;
+        @include adaptiveValue("row-gap", 15, 10);
+
+        @media (max-width: $mobileM) {
+            grid-area: left;
+        }
+    }
+
+    // .footer__logo
+    &__logo {
+        max-width: rem(130);
+    }
+
+    // .footer__address
+    &__address {
+    }
+
+    // .footer__contacts
+    &__contacts {
+        @media (max-width: $mobileM) {
+            grid-area: contacts;
+        }
+    }
+
+    // .footer__menu
+    &__menu {
+        @media (max-width: $mobileM) {
+            grid-area: menu;
+        }
+
+        ul {
+            display: grid;
+            align-items: flex-start;
+            @include adaptiveValue("row-gap", 15, 10);
+        }
+    }
+}
+.logo {
+    // .logo__link
+    &__link {
+    }
+}
+.communications {
+    display: grid;
+    align-items: flex-start;
+    @include adaptiveValue("row-gap", 15, 10);
+
+    // .communications__item
+    &__item {
+    }
+}
 
 //====================================================================================================

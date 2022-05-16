@@ -367,6 +367,7 @@
         display: flex;
         flex-direction: column;
         padding-bottom: 0;
+        padding-top: 0;
     }
 
     // .contacts__form
@@ -375,29 +376,60 @@
         flex: 1;
         display: flex;
         align-items: center;
+        padding-top: rem(78);
+        padding-bottom: rem(78);
+
+        @media (min-height: em(800)) {
+            @include adaptiveValue("padding-top", 98, 78);
+        }
+        @media (max-width:$mobileM){
+             padding-bottom: rem(24); 
+        }
 
         &::before,
         &::after {
-            content: "";
-            position: absolute;
-            display: block;
-            pointer-events: none;
+            @media (min-width: $mobileM) {
+                content: "";
+                position: absolute;
+                display: block;
+                pointer-events: none;
+            }
         }
         &::before {
-            width: rem(227);
-            height: rem(672);
-            background: url(../img/home/blobs1.svg) no-repeat center/contain;
             left: 0;
+
+            @media (min-width: $pc) {
+                width: rem(227);
+                height: rem(672);
+                background: url(../img/home/blobs1.svg) no-repeat center/contain;
+            }
+            @media (max-width: $pc) {
+                width: rem(274);
+                height: rem(193);
+                background: url(../img/home/blobs1-2.svg) no-repeat center/contain;
+                bottom: 0;
+            }
         }
         &::after {
-            background: url(../img/home/blobs2.svg) no-repeat center/contain;
             right: 0;
-            width: rem(227);
-            height: rem(739);
+
+            @media (min-width: $pc) {
+                background: url(../img/home/blobs2.svg) no-repeat center/contain;
+                @include adaptiveValue("width", 227, 129, 1520, 992, 1);
+                @include adaptiveValue("height", 739, 369, 1520, 992, 1);
+            }
+            @media (max-width: $pc) {
+                width: rem(200);
+                height: rem(112);
+                background: url(../img/home/blobs2-1.svg) no-repeat center/contain;
+                top: 0;
+            }
         }
 
         .contacts__container {
-            max-width: rem(1075);
+            @media (min-width: $pc) {
+                max-width: rem(1075);
+            }
         }
     }
 
@@ -408,8 +440,16 @@
     // .contacts__row
     &__row {
         display: grid;
-        grid-template-columns: repeat(2, 1fr);
-        column-gap: rem(120);
+        align-items: flex-start;
+        @include adaptiveValue("column-gap", 120, 20, 1520, 992, 1);
+        row-gap: rem(16);
+
+        @media (min-width: $mobile) {
+            grid-template-columns: 55% 1fr;
+        }
+        @media (min-width: $mobileM) {
+            grid-template-columns: 1fr 1fr;
+        }
     }
 
     // .contacts__left
@@ -418,10 +458,10 @@
 
     // .contacts__text
     &__text {
-        @include adaptiveValue("font-size", 18, 16);
+        @include adaptiveValue("font-size", 20, 12);
 
         &:not(:last-child) {
-            margin-bottom: rem(32);
+            @include adaptiveValue("margin-bottom", 32, 8);
         }
 
         h1,
@@ -429,11 +469,15 @@
         h3,
         h4 {
             &:not(:last-child) {
-                margin-bottom: rem(8);
+                @include adaptiveValue("margin-bottom", 8, 0);
             }
         }
+        h3 {
+            @include adaptiveValue("font-size", 26, 16);
+        }
         p {
-            margin: rem(8) 0;
+            @include adaptiveValue("margin-top", 8, 0);
+            @include adaptiveValue("margin-bottom", 8, 0);
         }
     }
 
