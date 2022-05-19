@@ -2900,7 +2900,7 @@ section:not(:first-child) {
   color: #000;
 }
 .result-calculator .options-service .checkbox {
-  flex: 0 0 100%;
+  flex: 0 0 100% !important;
 }
 .result-calculator__total {
   font-weight: 700;
