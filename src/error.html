@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ru">
+@@include('html/_head.htm',{
+"title":"Error"
+})
+
+<body class="error-page">
+    <div class="wrapper">
+        @@include('html/_header.htm',{})
+        <main class="page">
+            <section class="error">
+                <div class="error__container">
+                    <div class="error__img"><img src="@img/error/error.svg" alt="" loading="lazy"></div>
+                    <div class="error__text _content">
+                        <h1>Ups, etwas ist schief gelaufen </h1>
+                        <p>Das hätte nie passieren dürfen. Bitte, versuchen Sie es noch einmal!</p>
+                    </div>
+                    <div class="error__btn">
+                        <a href="home.html" class="btn btn_orange">Zur Startseite</a>
+                    </div>
+                </div>
+            </section>
+        </main>
+        @@include('html/_footer.htm',{})
+    </div>
+    @@include('html/_popup.htm',{})
+    @@include('html/_js.htm',{})
+</body>
+
+</html>

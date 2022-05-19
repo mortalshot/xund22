@@ -1,0 +1,75 @@
+// error ====================================================================================================
+.error-page {
+    .page {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .error {
+        flex: 1;
+    }
+}
+
+.error {
+    display: flex;
+    align-items: center;
+
+    @media (min-width: $tablet) {
+        &::before,
+        &::after {
+            content: "";
+            position: absolute;
+            display: block;
+            pointer-events: none;
+        }
+        &::before {
+            width: rem(195);
+            height: rem(562);
+            background: url(../img/error/blobs1.svg) no-repeat center/contain;
+            top: 50%;
+            left: 0;
+            transform: translateY(-50%);
+        }
+        &::after {
+            width: rem(240);
+            height: rem(552);
+            background: url(../img/error/blobs2.svg) no-repeat center/contain;
+            top: 50%;
+            right: 0;
+            transform: translateY(-50%);
+        }
+    }
+
+    // .error__container
+    &__container {
+        max-width: rem(632);
+        text-align: center;
+        display: grid;
+        @include adaptiveValue("row-gap", 32, 24);
+        position: relative;
+        z-index: 1;
+    }
+
+    // .error__img
+    &__img {
+        display: flex;
+        justify-content: center;
+        @include adaptiveValue("max-width", 223, 150);
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    // .error__text
+    &__text {
+        h1,
+        h2,
+        h3 {
+            @include adaptiveValue("font-size", 30, 22);
+            line-height: math.div(45, 30);
+        }
+    }
+
+    // .error__btn
+    &__btn {
+    }
+}

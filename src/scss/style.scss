@@ -75,6 +75,15 @@ body {
 	// Прижимаем footer
 	> main {
 		flex: 1 1 auto;
+		padding-top: rem(64);
+
+		@media (min-height: em(800)) {
+			@include adaptiveValue("padding-top", 98, 78);
+		}
+
+		.home-page & {
+			padding-top: 0;
+		}
 	}
 	// Фикс для слайдеров
 	> * {
@@ -108,4 +117,5 @@ body {
 @import "footer";
 
 // Подключение стилей отдельных страниц
-@import "home";
+@import "pages/home";
+@import "pages/error";

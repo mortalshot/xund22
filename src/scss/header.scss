@@ -5,6 +5,12 @@
 	left: 0;
 	top: 0;
 	z-index: 50;
+	background-color: $White;
+
+
+	.home-page & {
+		background-color: transparent;
+	}
 
 	._free & {
 		background-color: $White;
@@ -54,7 +60,7 @@
 			padding: rem(10);
 
 			&:not(:first-child) {
-				margin-top: rem(50);
+				@include adaptiveValue("margin-top", 50, 32);
 			}
 		}
 	}

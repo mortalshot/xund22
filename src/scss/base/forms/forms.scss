@@ -90,18 +90,21 @@
 
 			// .options__input
 			&__input {
-				&:checked + .options__label {
-					color: #60a134;
+				&:checked + .options__label span {
+					color: $White;
+					background-color: #60a134;
 				}
 			}
 
 			// .options__label
 			&__label {
-				transition: $transition ease color 0s;
-
 				&::before,
 				&::after {
 					display: none;
+				}
+
+				span {
+					transition: $transition ease all 0s;
 				}
 			}
 		}

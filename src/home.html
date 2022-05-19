@@ -4,7 +4,7 @@
 "title":"Главная"
 })
 
-<body>
+<body class="home-page">
 	<div class="wrapper">
 		@@include('html/_header.htm',{})
 		<main class="page">
@@ -20,7 +20,7 @@
 									</div>
 									<div class="template1__actions">
 										<button type="button" data-popup="#request" class="btn btn_orange">Dein Angebot</button>
-										<button type="button" data-popup="#calculator" class="btn btn_border">Deine Prämie</button>
+										<button type="button" data-popup="#service-selection" class="btn btn_border">Deine Prämie</button>
 									</div>
 								</div>
 								<div class="template1__slider swiper">
@@ -72,7 +72,7 @@
 								</div>
 								<div class="template1__actions">
 									<button type="button" data-popup="#request" class="btn btn_orange">Dein Angebot</button>
-									<button type="button" data-popup="#calculator" class="btn btn_border">Deine Prämie</button>
+									<button type="button" data-popup="#service-selection" class="btn btn_border">Deine Prämie</button>
 								</div>
 							</div>
 							<div class="home__bg">
@@ -98,7 +98,7 @@
 								</div>
 								<div class="template1__actions">
 									<button type="button" data-popup="#request" class="btn btn_orange">Dein Angebot</button>
-									<button type="button" data-popup="#calculator" class="btn btn_border">Deine Prämie</button>
+									<button type="button" data-popup="#service-selection" class="btn btn_border">Deine Prämie</button>
 								</div>
 							</div>
 							<div class="home__bg">
@@ -124,7 +124,7 @@
 								</div>
 								<div class="template1__actions">
 									<button type="button" data-popup="#request" class="btn btn_orange">Dein Angebot</button>
-									<button type="button" data-popup="#calculator" class="btn btn_border">Deine Prämie</button>
+									<button type="button" data-popup="#service-selection" class="btn btn_border">Deine Prämie</button>
 								</div>
 							</div>
 							<div class="home__bg">
@@ -150,7 +150,7 @@
 								</div>
 								<div class="template1__actions">
 									<button type="button" data-popup="#request" class="btn btn_orange">Dein Angebot</button>
-									<button type="button" data-popup="#calculator" class="btn btn_border">Deine Prämie</button>
+									<button type="button" data-popup="#service-selection" class="btn btn_border">Deine Prämie</button>
 								</div>
 							</div>
 							<div class="home__bg">
@@ -220,10 +220,9 @@
 							</div>
 						</div>
 					</div>
-
 					<div class="home__slide swiper-slide contacts">
 						<div class="home__content">
-							<form action="" class="contacts__form form calculator">
+							<form action="" class="contacts__form form">
 								<div class="contacts__container">
 									<div class="contacts__row">
 										<div class="contacts__left">
@@ -246,12 +245,12 @@
 															<label for="gender2" class="options__label"><span class="options__text _icon-male"></span></label>
 														</div>
 														<div class="options__item gender_3">
-															<input hidden id="gender3" class="options__input" type="radio" value="baby" name="gender">
-															<label for="gender3" class="options__label"><span class="options__text _icon-phone"></span></label>
+															<input hidden id="gender3" class="options__input" type="radio" value="kind" name="gender">
+															<label for="gender3" class="options__label"><span class="options__text _icon-kind"></span></label>
 														</div>
 													</div>
 												</div>
-												<div class="form__item form__item_row col-12 _disabled">
+												<div class="form__item form__item_row col-12 form__item_select _disabled">
 													<div class="form__label">Geburtsjahr</div>
 													<select name="form[]" data-scroll>
 														<option value="">YYYY</option>
@@ -289,23 +288,31 @@
 														<option value="1973">1973</option>
 													</select>
 												</div>
-												<div class="form__item col-12">
+												<div class="form__item col-12 form__item_service _disabled">
 													<div class="options-service">
 														<div class="checkbox service_1 _disabled">
-															<input hidden id="service1" class="checkbox__input" type="checkbox" value="Deine Sicherheit" name="service">
-															<label for="service1" class="checkbox__label"><span class="checkbox__text">Deine Sicherheit</span></label>
+															<label>
+																<input hidden id="service1" class="checkbox__input" type="checkbox" value="Deine Sicherheit" name="service">
+																<span>Deine Sicherheit</span>
+															</label>
 														</div>
 														<div class="checkbox service_2 _disabled">
-															<input hidden id="service2" class="checkbox__input" type="checkbox" value="Deine Freude" name="service">
-															<label for="service2" class="checkbox__label"><span class="checkbox__text">Deine Freude</span></label>
+															<label>
+																<input hidden id="service2" class="checkbox__input" type="checkbox" value="Deine Freude" name="service">
+																<span class="checkbox__text">Deine Freude</span>
+															</label>
 														</div>
 														<div class="checkbox service_3 _disabled">
-															<input hidden id="service3" class="checkbox__input" type="checkbox" value="Dein Nutzen" name="service">
-															<label for="service3" class="checkbox__label"><span class="checkbox__text">Dein Nutzen</span></label>
+															<label>
+																<input hidden id="service3" class="checkbox__input" type="checkbox" value="Dein Nutzen" name="service">
+																<span class="checkbox__text">Dein Nutzen</span>
+															</label>
 														</div>
 														<div class="checkbox service_4 _disabled">
-															<input hidden id="service4" class="checkbox__input" type="checkbox" value="Dein Baby" name="service">
-															<label for="service4" class="checkbox__label"><span class="checkbox__text">Dein Baby</span></label>
+															<label>
+																<input hidden id="service4" class="checkbox__input" type="checkbox" value="Dein Baby" name="service">
+																<span class="checkbox__text">Dein Baby</span>
+															</label>
 														</div>
 													</div>
 												</div>
@@ -357,30 +364,29 @@
 									</div>
 								</div>
 							</form>
-
-							<!-- <div class="footer">
-								<div class="footer__container">
-									<div class="footer__row">
-										<div class="footer__left">
-											<div class="footer__logo logo">
-												<a href="home.html" class="logo__link"><img src="@img/logo.svg" alt="" loading="lazy"></a>
-											</div>
-											<div class="footer__address">XUND Versicherungmakler KG <br> Walfischgasse 8/Top 17, 1010 Wien </div>
-										</div>
-										<div class="footer__contacts communications">
-											<a href="tel:+436508212748" class="communications__item">+43 650 82 12 748 </a>
-											<a href="mailto:bleib@xund.wien" class="communications__item">bleib@xund.wien </a>
-											<a href="https://www.xund.wien/" class="communications__item">www.xund.wien</a>
-										</div>
-										<nav class="footer__menu">
-											<ul>
-												<li><a href="">Impressum</a></li>
-												<li><a href="">Datenschutzerklärung</a></li>
-											</ul>
-										</nav>
+						</div>
+					</div>
+					<div class="home__slide swiper-slide home-footer">
+						<div class="home__container">
+							<div class="home__content">
+								<div class="home-footer__body">
+									<div class="home-footer__logo logo">
+										<a href="home.html" class="logo__link"><img src="@img/logo.svg" alt="" loading="lazy"></a>
 									</div>
+									<div class="home-footer__address">XUND Versicherungmakler KG <br> Walfischgasse 8/Top 17, 1010 Wien</div>
+									<div class="home-footer__contacts communications">
+										<a href="tel:+436508212748" class="communications__item">+43 650 82 12 748 </a>
+										<a href="mailto:bleib@xund.wien" class="communications__item">bleib@xund.wien </a>
+										<a href="https://www.xund.wien/" class="communications__item">www.xund.wien</a>
+									</div>
+									<nav class="home-footer__menu">
+										<ul>
+											<li><a href="">Impressum</a></li>
+											<li><a href="">Datenschutzerklärung</a></li>
+										</ul>
+									</nav>
 								</div>
-							</div> -->
+							</div>
 						</div>
 					</div>
 				</div>

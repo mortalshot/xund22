@@ -3,6 +3,8 @@
     background-color: #f3f3f3;
     padding-top: rem(24);
     padding-bottom: rem(24);
+    position: relative;
+    z-index: 1;
 
     // .footer__container
     &__container {
@@ -90,11 +92,7 @@
         }
     }
 }
-.logo {
-    // .logo__link
-    &__link {
-    }
-}
+
 .communications {
     display: grid;
     align-items: flex-start;

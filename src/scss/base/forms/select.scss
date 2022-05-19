@@ -99,11 +99,18 @@
 		overflow-x: hidden;
 		// Максимальная высота
 		max-height: 200px;
-		// Стили скроллбара
-		.simplebar-scrollbar {
-			&::before {
-				//opacity: 1;
-			}
+		scrollbar-width: thin;
+
+		&::-webkit-scrollbar {
+			width: rem(6);
+		}
+		&::-webkit-scrollbar-track {
+			background-color: rgba($color: $Black, $alpha: 0.5);
+			border-radius: 3px;
+		}
+		&::-webkit-scrollbar-thumb {
+			border-radius: 3px;
+			background-color: rgba($color: $Black, $alpha: 0.8);
 		}
 	}
 

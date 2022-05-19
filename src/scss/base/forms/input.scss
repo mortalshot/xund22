@@ -39,10 +39,9 @@ textarea {
 	// .form__input_contact
 	&_contact {
 		border: 0;
-		padding: rem(10) rem(20);
-
 		@include adaptiveValue("padding-top", 10, 5);
 		@include adaptiveValue("padding-bottom", 10, 5);
+		padding-left: rem(20);
 	}
 }
 textarea.input {

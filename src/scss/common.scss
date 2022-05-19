@@ -99,3 +99,25 @@ video {
         margin-bottom: 0;
     }
 }
+
+section {
+    padding-top: rem(20);
+    @include adaptiveValue("margin-bottom", 70, 44);
+
+    &:not(:first-child) {
+        padding-top: rem(30);
+    }
+    &:last-child {
+        @include adaptiveValue("margin-bottom", 100, 50);
+    }
+}
+
+._hidden {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 0;
+    height: 0;
+    opacity: 0;
+    visibility: hidden;
+}
