@@ -45,6 +45,7 @@ function initSliders() {
 			autoHeight: true,
 			speed: 800,
 			watchOverflow: true,
+			simulateTouch: false,
 
 			// Запрет на смену слайда через перетаскивание
 			// allowTouchMove: false,

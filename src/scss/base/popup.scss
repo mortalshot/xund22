@@ -93,8 +93,19 @@ body::after {
 
 	// .popup_calculator
 	&_calculator {
+		@media (max-width: $mobile) {
+			padding: 0;
+		}
+
 		.popup__content {
 			position: relative;
+
+			@media (max-width: $mobile) {
+				flex: 1;
+				display: flex;
+				justify-content: center;
+				align-items: center;
+			}
 
 			&::before,
 			&::after {

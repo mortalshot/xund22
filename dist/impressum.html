@@ -6,7 +6,7 @@
 	<meta charset="UTF-8">
 	<meta name="format-detection" content="telephone=no">
 	<!-- <style>body{opacity: 0;}</style> -->
-	<link rel="stylesheet" href="css/style.min.css?_v=20220519180621">
+	<link rel="stylesheet" href="css/style.min.css?_v=20220523140624">
 	<link rel="shortcut icon" href="favicon.ico">
 	<!-- <meta name="robots" content="noindex, nofollow"> -->
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -84,8 +84,8 @@
 					</div>
 					<nav class="footer__menu">
 						<ul>
-							<li><a href="">Impressum</a></li>
-							<li><a href="">Datenschutzerklärung</a></li>
+							<li><a href="impressum.html">Impressum</a></li>
+							<li><a href="impressum.html">Datenschutzerklärung</a></li>
 						</ul>
 					</nav>
 				</div>
@@ -113,15 +113,15 @@
 											<div class="options options_gender">
 												<div class="options__item gender_1">
 													<input hidden id="calculator-gender1" class="options__input" type="radio" value="female" name="gender">
-													<label for="calculator-gender1" class="options__label"><span class="options__text _icon-female"></span></label>
+													<label for="calculator-gender1" class="options__label" data-tippy-content="female"><span class="options__text _icon-female"></span></label>
 												</div>
-												<div class="options__item gender_3">
+												<div class="options__item gender_2">
 													<input hidden id="calculator-gender2" class="options__input" type="radio" value="male" name="gender">
-													<label for="calculator-gender2" class="options__label"><span class="options__text _icon-male"></span></label>
+													<label for="calculator-gender2" class="options__label" data-tippy-content="male"><span class="options__text _icon-male"></span></label>
 												</div>
 												<div class="options__item gender_3">
 													<input hidden id="calculator-gender3" class="options__input" type="radio" value="kind" name="gender">
-													<label for="calculator-gender3" class="options__label"><span class="options__text _icon-kind"></span></label>
+													<label for="calculator-gender3" class="options__label" data-tippy-content="kind"><span class="options__text _icon-kind"></span></label>
 												</div>
 											</div>
 										</div>
@@ -163,40 +163,13 @@
 												<option value="1973">1973</option>
 											</select>
 										</div>
-										<div class="form__item col-12 form__item_service _disabled">
-											<div class="options-service">
-												<div class="checkbox service_1 _disabled">
-													<label>
-														<input hidden class="checkbox__input" type="checkbox" value="Deine Sicherheit" name="service">
-														<span>Deine Sicherheit</span>
-													</label>
-												</div>
-												<div class="checkbox service_2 _disabled">
-													<label>
-														<input hidden class="checkbox__input" type="checkbox" value="Deine Freude" name="service">
-														<span class="checkbox__text">Deine Freude</span>
-													</label>
-												</div>
-												<div class="checkbox service_3 _disabled">
-													<label>
-														<input hidden class="checkbox__input" type="checkbox" value="Dein Nutzen" name="service">
-														<span class="checkbox__text">Dein Nutzen</span>
-													</label>
-												</div>
-												<div class="checkbox service_4 _disabled">
-													<label>
-														<input hidden class="checkbox__input" type="checkbox" value="Dein Baby" name="service">
-														<span class="checkbox__text">Dein Baby</span>
-													</label>
-												</div>
-											</div>
-										</div>
 									</div>
 
 									<div class="calculator__total total-calculator">
 										<div class="total-calculator__wrapper">
-											<div class="total-calculator__plug">
-												Bitte wählen Sie die versicherte Person, das Geburtsjahr und die gewünschten Leistungen aus
+											<div class="total-calculator__plug _content">
+												<p>Bitte wählen Sie die versicherte Person, das Geburtsjahr und die gewünschten Leistungen aus, damit wir die ungefähren Kosten berechnen können</p>
+												<p>Damit würdest du bis zu 3000 € pro Jahr an privatärztlichen Leistungen sparen.</p>
 											</div>
 											<div class="total-calculator__main">
 												<div class="total-calculator__caption">
@@ -209,54 +182,81 @@
 												</div>
 												<div class="total-calculator__actions">
 													<button type="button" class="btn btn_black">Angebot anfragen</button>
+													<button type="reset" class="btn btn_border">Neu berechnen</button>
 												</div>
 											</div>
 										</div>
 									</div>
 								</div>
 
-								<div class="calculator__right">
+								<div class="calculator__right" data-da=".calculator__left,767.98,2">
 									<div class="calculator__text _content">
 										<h3>Deine Prioritäten:</h3>
 									</div>
 
-									<div class="calculator__services">
-										<div class="calculator__service service-calculator">
-											<div class="service-calculator__body">
-												<div class="service-calculator__caption" style="color: #A9D08F">Deine Sicherheit</div>
-												<div class="service-calculator__text _content">
-													<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Placerat accumsan egestas semper tincidunt.</p>
-												</div>
+									<div class="calculator__services form__item_service _disabled">
+										<div class="options-service">
+											<div class="checkbox service_1 _disabled">
+												<label>
+													<input hidden class="checkbox__input" type="checkbox" value="Deine Sicherheit" name="service">
+													<div class="calculator__service service-calculator">
+														<div class="service-calculator__body">
+															<div class="service-calculator__caption" style="color: #A9D08F">Deine Sicherheit</div>
+															<div class="service-calculator__text _content">
+																<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Placerat accumsan egestas semper tincidunt.</p>
+															</div>
+														</div>
+														<div class="service-calculator__bg"><picture><source srcset="img/home/hero-cards-1-1.webp" type="image/webp"><img src="img/home/hero-cards-1-1.jpg" alt=""></picture></div>
+													</div>
+												</label>
 											</div>
-											<div class="service-calculator__bg"><picture><source srcset="img/home/hero-cards-1-1.webp" type="image/webp"><img src="img/home/hero-cards-1-1.jpg" alt=""></picture></div>
-										</div>
-										<div class="calculator__service service-calculator">
-											<div class="service-calculator__body">
-												<div class="service-calculator__caption" style="color: #61768E">Dein Nutzen</div>
-												<div class="service-calculator__text _content">
-													<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Placerat accumsan egestas semper tincidunt.</p>
-												</div>
+											<div class="checkbox service_2 _disabled">
+												<label>
+													<input hidden class="checkbox__input" type="checkbox" value="Deine Freude" name="service">
+													<div class="calculator__service service-calculator">
+														<div class="service-calculator__body">
+															<div class="service-calculator__caption" style="color: #61768E">Dein Nutzen</div>
+															<div class="service-calculator__text _content">
+																<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Placerat accumsan egestas semper tincidunt.</p>
+															</div>
+														</div>
+														<div class="service-calculator__bg"><picture><source srcset="img/home/hero-cards-1-2.webp" type="image/webp"><img src="img/home/hero-cards-1-2.jpg" alt=""></picture></div>
+													</div>
+												</label>
 											</div>
-											<div class="service-calculator__bg"><picture><source srcset="img/home/hero-cards-1-2.webp" type="image/webp"><img src="img/home/hero-cards-1-2.jpg" alt=""></picture></div>
-										</div>
-										<div class="calculator__service service-calculator">
-											<div class="service-calculator__body">
-												<div class="service-calculator__caption" style="color: #EFBC3F">Deine Freude</div>
-												<div class="service-calculator__text _content">
-													<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Placerat accumsan egestas semper tincidunt.</p>
-												</div>
+											<div class="checkbox service_3 _disabled">
+												<label>
+													<input hidden class="checkbox__input" type="checkbox" value="Dein Nutzen" name="service">
+													<div class="calculator__service service-calculator">
+														<div class="service-calculator__body">
+															<div class="service-calculator__caption" style="color: #EFBC3F">Deine Freude</div>
+															<div class="service-calculator__text _content">
+																<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Placerat accumsan egestas semper tincidunt.</p>
+															</div>
+														</div>
+														<div class="service-calculator__bg"><picture><source srcset="img/home/hero-cards-1-3.webp" type="image/webp"><img src="img/home/hero-cards-1-3.jpg" alt=""></picture></div>
+													</div>
+												</label>
 											</div>
-											<div class="service-calculator__bg"><picture><source srcset="img/home/hero-cards-1-3.webp" type="image/webp"><img src="img/home/hero-cards-1-3.jpg" alt=""></picture></div>
-										</div>
-										<div class="calculator__service service-calculator">
-											<div class="service-calculator__body">
-												<div class="service-calculator__caption" style="color: #F0826E">Dein Baby</div>
-												<div class="service-calculator__text _content">
-													<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Placerat accumsan egestas semper tincidunt.</p>
-												</div>
+											<div class="checkbox service_4 _disabled">
+												<label>
+													<input hidden class="checkbox__input" type="checkbox" value="Dein Baby" name="service">
+													<div class="calculator__service service-calculator">
+														<div class="service-calculator__body">
+															<div class="service-calculator__caption" style="color: #F0826E">Dein Baby</div>
+															<div class="service-calculator__text _content">
+																<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Placerat accumsan egestas semper tincidunt.</p>
+															</div>
+														</div>
+														<div class="service-calculator__bg"><picture><source srcset="img/home/hero-cards-1-4.webp" type="image/webp"><img src="img/home/hero-cards-1-4.jpg" alt=""></picture></div>
+													</div>
+												</label>
 											</div>
-											<div class="service-calculator__bg"><picture><source srcset="img/home/hero-cards-1-4.webp" type="image/webp"><img src="img/home/hero-cards-1-4.jpg" alt=""></picture></div>
 										</div>
+									</div>
+
+									<div class="calculator__text _content">
+										<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae qui, vero blanditiis saepe minus omnis.</p>
 									</div>
 								</div>
 							</div>
@@ -287,7 +287,7 @@
 										<div class="result-calculator__total">Prämie ca. <span>€100-150</span></div>
 
 										<div class="result-calculator__actions">
-											<button type="button" class="btn btn_border">Neu berechnen</button>
+											<button type="reset" class="btn btn_border">Neu berechnen</button>
 										</div>
 									</div>
 								</div>
@@ -305,10 +305,6 @@
 											<div class="form__item-wrapper _disabled">
 												<div class="form__item-controls options">
 													<div class="options__item">
-														<input hidden id="calculator-contactType1" class="options__input" type="radio" value="whatsapp" name="contactType">
-														<label for="calculator-contactType1" class="options__label"><span class="options__text _icon-whatsapp"></span></label>
-													</div>
-													<div class="options__item">
 														<input hidden id="calculator-contactType2" class="options__input" type="radio" value="email" name="contactType">
 														<label for="calculator-contactType2" class="options__label"><span class="options__text _icon-email"></span></label>
 													</div>
@@ -320,6 +316,9 @@
 
 												<input id="calculator-contactsContact" autocomplete="off" type="text" name="contactsContact" placeholder="Wählen Sie eine Option" class="form__input form__input_contact" disabled required>
 											</div>
+										</div>
+										<div class="form__item col-12">
+											<textarea autocomplete="off" placeholder="Dein Nachricht" data-error="Ошибка" class="form__input" rows="1"></textarea>
 										</div>
 									</div>
 
@@ -524,15 +523,15 @@
 									<div class="options options_gender">
 										<div class="options__item gender_1">
 											<input hidden id="request-gender1" class="options__input" type="radio" value="female" name="gender">
-											<label for="request-gender1" class="options__label"><span class="options__text _icon-female"></span></label>
+											<label for="request-gender1" class="options__label" data-tippy-content="female"><span class="options__text _icon-female"></span></label>
 										</div>
 										<div class="options__item gender_3">
 											<input hidden id="request-gender2" class="options__input" type="radio" value="male" name="gender">
-											<label for="request-gender2" class="options__label"><span class="options__text _icon-male"></span></label>
+											<label for="request-gender2" class="options__label" data-tippy-content="male"><span class="options__text _icon-male"></span></label>
 										</div>
 										<div class="options__item gender_3">
 											<input hidden id="request-gender3" class="options__input" type="radio" value="kind" name="gender">
-											<label for="request-gender3" class="options__label"><span class="options__text _icon-kind"></span></label>
+											<label for="request-gender3" class="options__label" data-tippy-content="kind"><span class="options__text _icon-kind"></span></label>
 										</div>
 									</div>
 								</div>
@@ -617,21 +616,20 @@
 									<div class="form__item-wrapper _disabled">
 										<div class="form__item-controls options">
 											<div class="options__item">
-												<input hidden id="contactType1" class="options__input" type="radio" value="whatsapp" name="contactType">
-												<label for="contactType1" class="options__label"><span class="options__text _icon-whatsapp"></span></label>
+												<input hidden id="requestContactType2" class="options__input" type="radio" value="email" name="contactType">
+												<label for="requestContactType2" class="options__label"><span class="options__text _icon-email"></span></label>
 											</div>
 											<div class="options__item">
-												<input hidden id="contactType2" class="options__input" type="radio" value="email" name="contactType">
-												<label for="contactType2" class="options__label"><span class="options__text _icon-email"></span></label>
-											</div>
-											<div class="options__item">
-												<input hidden id="contactType3" class="options__input" type="radio" value="phone" name="contactType">
-												<label for="contactType3" class="options__label"><span class="options__text _icon-phone"></span></label>
+												<input hidden id="requesstContactType3" class="options__input" type="radio" value="phone" name="contactType">
+												<label for="requesstContactType3" class="options__label"><span class="options__text _icon-phone"></span></label>
 											</div>
 										</div>
 
 										<input id="contactsContact" autocomplete="off" type="text" name="contactsContact" placeholder="Wählen Sie eine Option" class="form__input form__input_contact" disabled required>
 									</div>
+								</div>
+								<div class="form__item col-12">
+									<textarea autocomplete="off" placeholder="Dein Nachricht" data-error="Ошибка" class="form__input" rows="1"></textarea>
 								</div>
 							</div>
 							<div class="form__privacy">
@@ -667,7 +665,7 @@
 			</div>
 		</div>
 	</div>
-	<script src="js/app.min.js?_v=20220519180621"></script>
+	<script src="js/app.min.js?_v=20220523140624"></script>
 </body>
 
 </html>

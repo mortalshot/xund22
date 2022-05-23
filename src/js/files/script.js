@@ -86,6 +86,8 @@ if (service.length > 0) {
         const serviceInput = element.querySelectorAll('input');
         const parent = element.closest('.form');
         const femaleInput = parent.querySelector('.gender_1 input');
+        const maleInput = parent.querySelector('.gender_2 input');
+        const kindInput = parent.querySelector('.gender_3 input');
         const sicherheit = parent.querySelector('.service_1 input');
         const freude = parent.querySelector('.service_2 input');
         const nutzen = parent.querySelector('.service_3 input');
@@ -118,15 +120,23 @@ if (service.length > 0) {
                 }
 
                 // Выбрана ли услуга
+                const nextStepButton = parent.querySelector('.total-calculator__actions .btn_black');
                 if (sicherheit.checked || freude.checked || nutzen.checked || baby.checked) {
                     parent.querySelector('.form__item-wrapper').classList.remove('_disabled');
                     const total = parent.querySelector('.total-calculator');
                     if (total) {
                         total.classList.add('_active');
                     }
+
+                    if (nextStepButton) {
+                        if (femaleInput.checked || maleInput.checked || kindInput.checked) {
+                            nextStepButton.classList.remove('_disabled');
+                        }
+                    }
                 } else {
                     parent.querySelector('.form__item-wrapper').classList.add('_disabled');
                     parent.querySelector('.form__submit').classList.add('_disabled');
+                    nextStepButton.classList.add('_disabled');
                 }
 
                 if (sicherheit.checked && !nutzen.checked && !freude.checked && !baby.checked) {
@@ -290,3 +300,14 @@ secondStepButton.addEventListener('click', function () {
     resultOptionsWrapper.innerHTML = "";
     resultGenderWrapper.className = resultGenderWrapper.className.replace(/_icon-[^\>]*/, '');
 })
+
+const calculatorReset = document.querySelectorAll('.calculator button[type="reset"]');
+console.log(calculatorReset);
+calculatorReset.forEach(element => {
+    element.addEventListener('click', function () {
+        const parent = this.closest('.form');
+        const nextStepButton = parent.querySelector('.total-calculator__actions .btn_black');
+
+        nextStepButton.classList.add('_disabled');
+    })
+});

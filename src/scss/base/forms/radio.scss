@@ -84,7 +84,7 @@
 		}
 
 		.options__label {
-			@include adaptiveValue("font-size", 40, 30);
+			@include adaptiveValue("font-size", 40, 35);
 			color: #c4c4c4;
 			transition: $transition ease color 0s;
 
